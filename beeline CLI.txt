@@ -1,0 +1,17 @@
+## beeline cli and beeline shell actions 
+
+https://stackoverflow.com/questions/38598011/beeline-query-in-bash-script
+
+Adding variables in shell script and parsing them via oozie 
+
+
+
+
+
+
+General beeline commands 
+https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-BeelineCommands
+
+
+Oozie shell actions 
+https://oozie.apache.org/docs/4.1.0/DG_HiveActionExtension.html
