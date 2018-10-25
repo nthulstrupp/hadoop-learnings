@@ -5,12 +5,12 @@ This repository contains solutions to different topics and issues I have encount
 
 ## ETL: Tranferring data from Hadoop (HDFS) to Amazon S3 bucket
 
-As part of a project with a partner we needed to send our data to a shared S3 bucket.
+As part of a project with a partner we needed to send our data to a shared S3 bucket. This needed to be a automated process, so I setup a workflow in oozie that prepares a csv file, compress it and loads it to a s3-bucket
 
 
 ## ETL: Working with oozie shell actions (Beeline CLI)
 
-Implementing a 
+Implementing a oozie shell action in a workflow that connects to a external server using JDBC-driver and Beeline CLI and executes a hive-script
 
 
 ## ETL: Working with CSV files (Creating tables from csv / Exporting big csv)
@@ -27,7 +27,7 @@ this can be a option.
 
 ## Analytical: Calculating a weighted rooling average 
 
-
+Simple calculation that calculates a average value 
 
 
 ## Analytical: Calculating seasonal indexes (mySql)
