@@ -37,7 +37,13 @@ Simple calculation that calculates a average value
 
 ## Folder Structure
 
-* [SparkSQL](https://spark.apache.org/sql/) - Link to SparkSQL download site
+* [Beeline CLI](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-BeelineCommands) - General Beeline CLI
+
+* [Oozie Shell Acions](https://oozie.apache.org/docs/4.1.0/DG_HiveActionExtension.html) - General Oozie Shell Action setup
+
+* 
+
+
 
     co_updateStuff
     |-- wf_updateStuff
