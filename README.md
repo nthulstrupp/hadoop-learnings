@@ -37,6 +37,7 @@ Simple calculation that calculates a average value
 
 ## Folder Structure
 
+* [SparkSQL](https://spark.apache.org/sql/) - Link to SparkSQL download site
 
     co_updateStuff
     |-- wf_updateStuff
