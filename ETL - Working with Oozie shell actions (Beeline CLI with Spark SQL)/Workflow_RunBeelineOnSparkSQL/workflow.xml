@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-app name="executeBeeline" xmlns="uri:oozie:workflow:0.4">
+<start to="shell"/>
+<action name="shell">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>			 
+                <exec>execute.sh</exec>
+				        <argument>hive_query.hql</argument>
+                <argument>var1=${var2}</argument>
+                <argument>var2=${var2}</argument>		
+                <file>execute.sh</file>
+				<file>hive_query.hql</file>
+			<capture-output/>
+        </shell>
+        <ok to="end"/>
+        <error to="kill"/>
+</action>
+<kill name="kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+</kill>
+<end name="end"/>
+</workflow-app>
