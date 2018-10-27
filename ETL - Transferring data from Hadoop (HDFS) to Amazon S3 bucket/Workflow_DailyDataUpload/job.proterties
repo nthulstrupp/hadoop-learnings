@@ -1,0 +1,8 @@
+#mandatory, the workflow will crash without it.
+oozie.use.system.libpath=true
+
+#the crunch date for which to run the workflow
+crunchDate=${crunchDate}
+
+crundYmd=${crunchYmd}
+

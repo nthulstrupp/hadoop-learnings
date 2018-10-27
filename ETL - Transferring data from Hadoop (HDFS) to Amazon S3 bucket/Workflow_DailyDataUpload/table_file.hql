@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS table.file;
+CREATE EXTERNAL TABLE table.file (   
+column1 STRING, 
+column2 STRING,ymd INT,
+ds STRING
+) 
+CLUSTERED BY (ymd) INTO 1 Buckets
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+NULL DEFINED AS 'NULL'
+STORED AS TEXTFILE
+LOCATION 'hdfs://nameservice1/your_hdfs_location/data_files/';

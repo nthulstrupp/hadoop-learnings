@@ -1,0 +1,6 @@
+{
+"column1":{"type":"STRING"},
+"column2":{"type":"STRING"},
+"date":{"type":"INT"},
+"ds": {"partition_order": 1, "is_partition_key": true, "type": "STRING"}
+}

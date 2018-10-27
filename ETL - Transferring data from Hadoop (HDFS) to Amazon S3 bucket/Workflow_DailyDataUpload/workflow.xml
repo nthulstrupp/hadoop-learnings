@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-app name="daily_data_transfer" xmlns="uri:oozie:workflow:0.4">
+
+<start to="hive_data"/>
+	<action name="hive_data">
+			<hive xmlns="uri:oozie:hive-action:0.2">
+				<job-tracker>${jobTracker}</job-tracker>
+				<name-node>${nameNode}</name-node>
+				  <job-xml>/data/hive/hive.xml</job-xml>
+				<script>hive_data.hql</script>
+				  <param>crunchDate=${crunchDate}</param>
+			</hive>
+			<ok to="hive_file"/>
+			<error to="kill"/>
+	</action>
+	
+       <action name="hive_file">
+			<hive xmlns="uri:oozie:hive-action:0.2">
+				<job-tracker>${jobTracker}</job-tracker>
+				<name-node>${nameNode}</name-node>
+				  <job-xml>/data/hive/hive.xml</job-xml>
+				<script>hive_file.hql</script>
+			</hive>
+			<ok to="fs_rename_file"/>
+			<error to="kill"/>
+	</action>
+
+<action name="fs_rename_file">
+	<fs>
+		<move source='${nameNode}/your_hdfs_location/data_file/000000_0.gz' target='${nameNode}/your_hdfs_location/data_file/${crunchDate}.gz'/>
+	</fs>
+	<ok to="execute"/>
+	<error to="kill"/>
+</action>
+
+<action name="execute">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+			<configuration>
+			<property>
+				<name>fs.s3a.access.key</name>
+				<value>YOUR KEY</value>
+			</property>
+
+			<property>
+				<name>fs.s3a.secret.key</name>
+				<value>YOUR SECRET</value>
+			</property>
+
+            <property>
+			  <name>ipc.client.fallback-to-simple-auth-allowed</name>
+			  <value>true</value>
+			</property>
+
+            <property>
+				<name>fs.s3a.server-side-encryption-algorithm</name>
+				<value>AES256</value>
+				<description>Specify a server-side encryption algorithm for S3A.
+				The default is NULL, and the only other currently allowable value is AES256.
+				</description>
+			</property>
+			</configuration>	
+			
+            <exec>execute.sh</exec>
+			<argument>${crunchDate}</argument>
+			<argument>${crunchYmd}</argument>
+            <file>${nameNode}/your_hdfs_location/execute.sh#execute.sh</file>
+            <capture-output/>
+        </shell>
+        <ok to="end"/>
+        <error to="kill"/>
+</action>
+<kill name="kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+</kill>
+<end name="end"/>
+</workflow-app>
