@@ -7,15 +7,16 @@ This repository contains solutions to different topics and issues I have encount
 
 As part of a project with a partner we needed to send our data to a shared S3 bucket. This needed to be a automated process, so I setup a workflow in oozie that prepares a csv file, compress it and loads it to a s3-bucket
 
+## [ETL: Working with CSV files (Creating tables from csv / Exporting big csv)](https://github.com/nthulstrupp/hadoop-learnings/tree/master/ETL%20-%20Working%20with%20CSV%20files%20-%20creating%20tables%20from%20csv)
 
-## ETL: Working with oozie shell actions (Beeline CLI)
+csv-files will always be a part of any data analyst / data scientist work, I collected some of the most used exports / imports of csv's
+
+
+## [ETL: Working with oozie shell actions (Beeline CLI)](https://github.com/nthulstrupp/hadoop-learnings/tree/master/ETL%20-%20Working%20with%20Oozie%20shell%20actions%20-%20Beeline%20CLI%20with%20Spark%20SQL)
 
 Implementing a oozie shell action in a workflow that connects to a external server using JDBC-driver and Beeline CLI and executes a hive-script
 
 
-## ETL: Working with CSV files (Creating tables from csv / Exporting big csv)
-
-csv-files will always be a part of any data analyst / data scientist work, I collected some of the most used exports / imports of csv's
 
 
 ## Functions: Arrays & collect_set
