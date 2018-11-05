@@ -1,11 +1,14 @@
-## Workflow with 2 parallel actions
+# Workflow with 2 parallel actions email and decision
 
-Owner: Nikolaj thulstrup
+### Owner: 
+- Nikolaj thulstrup
 
-Input: 
+### Input: 
 - 
-Output:
+
+### Output:
 - 
 
 
-Schedule: Runs every day all year!
+###Schedule: 
+- Runs every day all year!
