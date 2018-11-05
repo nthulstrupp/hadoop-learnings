@@ -1,0 +1,73 @@
+<workflow-app name="Test-app" xmlns="uri:oozie:workflow:0.5">
+  <start to="fork" />
+
+<fork name="fork">
+        <path start="update_hive_1" />   
+        <path start="update_hive_2" />  
+       
+</fork>     
+              
+    <action name="update_hive_1">
+    <sub-workflow>
+      <app-path>${nameNode}/user/location1
+      </app-path>
+      <propagate-configuration />
+      <configuration>
+        <property>
+          <name>crunchDate</name>
+          <value>${crunchDate}</value>
+        </property>
+      </configuration>
+    </sub-workflow>
+    <ok to="join" />
+    <error to="join" />
+  </action>
+
+   <action name="update_hive_2">
+    <sub-workflow>
+      <app-path>${nameNode}/user/location2
+      </app-path>
+      <propagate-configuration />
+      <configuration>
+        <property>
+          <name>crunchDate</name>
+          <value>${crunchDate}</value>
+        </property>
+      </configuration>
+    </sub-workflow>
+    <ok to="join" />
+    <error to="join" />
+  </action>
+
+
+<join name="join" to="decision_to_kill"/>
+
+  <decision name="decision_to_kill">
+    <switch>
+      <case to="end">${wf:lastErrorNode() eq null}</case>
+      <default to="email_then_kill" /> <!-- could also be another type of action like email / send sms -->
+    </switch>
+  </decision>
+  
+  
+  <action name="email_then_kill">
+   	 <email xmlns="uri:oozie:email-action:0.1"> 
+      <to>youremail@email.com</to>
+      <cc>yourfriendsemail@email.com</cc>
+      <subject>Workflow ${wf:name()} failed</subject>
+      <body>
+        One or more actions from workflow ${wf:name()} failed.
+        
+      </body>
+   	 </email>
+    	<ok to="kill" />
+    	<error to="kill" />
+  	</action>
+
+  
+    <kill name="kill">
+    <message>Action failed, error
+      message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+  <end name="end" />
+</workflow-app>

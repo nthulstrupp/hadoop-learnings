@@ -3,6 +3,11 @@
 This repository contains solutions to different topics and issues I have encountered over the past year working with the hadoop (Hive, Impala, Oozie). Initially there will not be any specific ording more just to keep track of the topics
 
 
+## ETL: Oozie workflow - with fork 
+
+Setting up automatic workflows & and running multiple actions in parallel. 
+
+
 ## [ETL: Tranferring data from Hadoop (HDFS) to Amazon S3 bucket](https://github.com/nthulstrupp/hadoop-learnings/tree/master/ETL%20-%20Transferring%20data%20from%20Hadoop%20(HDFS)%20to%20Amazon%20S3%20bucket)
 
 As part of a project with a partner we needed to send our data to a shared S3 bucket. This needed to be a automated process, so I setup a workflow in oozie that prepares a csv file, compress it and loads it to a s3-bucket
