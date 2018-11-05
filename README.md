@@ -3,10 +3,9 @@
 This repository contains solutions to different topics and issues I have encountered over the past year working with the hadoop (Hive, Impala, Oozie). Initially there will not be any specific ording more just to keep track of the topics
 
 
-## ETL: Oozie workflow - with fork 
+## [ETL: Oozie workflow - with fork](https://github.com/nthulstrupp/hadoop-learnings/tree/master/ETL%20-%20Oozie%20workflow%20-%20with%20fork%20and%20decision)
 
 Setting up automatic workflows & and running multiple actions in parallel. 
-
 
 ## [ETL: Tranferring data from Hadoop (HDFS) to Amazon S3 bucket](https://github.com/nthulstrupp/hadoop-learnings/tree/master/ETL%20-%20Transferring%20data%20from%20Hadoop%20(HDFS)%20to%20Amazon%20S3%20bucket)
 
@@ -44,7 +43,9 @@ Simple calculation that calculates a average value
 
 * [Oozie Shell Acions](https://oozie.apache.org/docs/4.1.0/DG_HiveActionExtension.html) - General Oozie Shell Action setup
 
-* 
+* [Oozie Email Acions](https://oozie.apache.org/docs/3.1.3-incubating/DG_EmailActionExtension.html) - General Oozie Email Action setup
+
+
 
 
 
