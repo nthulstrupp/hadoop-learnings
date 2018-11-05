@@ -44,7 +44,9 @@ Simple calculation that calculates a average value
 
 * [Oozie Shell Acions](https://oozie.apache.org/docs/4.1.0/DG_HiveActionExtension.html) - General Oozie Shell Action setup
 
-* 
+* [Oozie Email Acions](https://oozie.apache.org/docs/3.1.3-incubating/DG_EmailActionExtension.html) - General Oozie Email Action setup
+
+
 
 
 
