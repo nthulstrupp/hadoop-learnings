@@ -45,7 +45,7 @@ Simple calculation that calculates a average value
 
 * [Oozie Email Acions](https://oozie.apache.org/docs/3.1.3-incubating/DG_EmailActionExtension.html) - General Oozie Email Action setup
 
-
+* 
 
 
     hadoop-learnings
@@ -60,5 +60,28 @@ Simple calculation that calculates a average value
     |   |-- 
     |-- ETL: Working with CSV files
     |   |-- 
+    |-- README.md
+    +-- coordinator.xml
+    
+    
+    
+    co_updateStuff
+    |-- wf_updateStuff
+    |   |-- wf_subworkflow1
+    |   |   |-- hive_subworkflow1.hql
+    |   |   |-- job.properties
+    |   |   |-- README.md
+    |   |   |-- table_subworkflow1.hql
+    |   |   +-- workflow.xml
+    |   |-- wf_subworkflow2
+    |   |   |-- hive_subworkflow2.hql
+    |   |   |-- job.properties
+    |   |   |-- README.md
+    |   |   |-- table_subworkflow2.hql
+    |   |   +-- workflow.xml
+    |   |-- job.properties
+    |   |-- README.md
+    |   +-- workflow.xml
+    |-- job.properties
     |-- README.md
     +-- coordinator.xml
