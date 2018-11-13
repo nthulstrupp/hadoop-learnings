@@ -22,15 +22,14 @@ Implementing a oozie shell action in a workflow that connects to a external serv
 
 
 
-
-## Functions: Arrays & collect_set
+## [Functions: Arrays & collect_set](https://github.com/nthulstrupp/hadoop-learnings/tree/master/Functions%20-%20Arrays%20and%20collect_set)
 
 Arrays can be a good way to collect much data in one single column, if ones want to keep it simple and have it in a string 
 this can be a option. 
 
 
 
-## Analytical: Calculating a weighted rooling average
+## [Analytical: Calculating a weighted rooling average](https://github.com/nthulstrupp/hadoop-learnings/tree/master/Analytical%20-%20Calculating%20a%20rolling%20average)
 
 Simple calculation that calculates a average value 
 
