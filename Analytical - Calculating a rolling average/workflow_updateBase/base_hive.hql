@@ -58,7 +58,7 @@ SELECT
 	country,
 	time_stamp,
 	visits,
-	IF(bl_visits<=1,0.5,bl_visits) as bl_visits,
+	IF(bl_visits<=1,0.5,bl_visits) as bl_visits, -- makes sure that in cases where there is a low baseline this will not be 1.. 
 	ymd
 FROM
 	cte_prep
