@@ -1,5 +1,5 @@
-DROP TABLE trivago_analytic.norm_dist_minutes;
-CREATE EXTERNAL TABLE trivago_analytic.norm_dist_minutes (
+DROP TABLE norm_dist_minutes;
+CREATE EXTERNAL TABLE norm_dist_minutes (
   offset INT,    
   weight DOUBLE
   )
