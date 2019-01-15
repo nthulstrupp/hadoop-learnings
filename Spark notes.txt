@@ -1,8 +1,0 @@
-
-## Using Jupyter and spark / pyspark 
-
-https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/hdinsight/spark/apache-spark-jupyter-notebook-install-locally.md
-
-
-Lagged bookings 
-
